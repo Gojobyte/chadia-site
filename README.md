@@ -46,6 +46,24 @@ Déploiement manuel si besoin :
 vercel --prod
 ```
 
+### Prérequis du déploiement automatique
+
+Le projet Vercel est sur le **plan Hobby**, qui refuse de déployer un dépôt Git
+**privé** : Vercel doit pouvoir identifier l'auteur du commit, et la
+« collaboration » (donc l'identification d'un auteur sur un dépôt privé) est
+réservée au plan Pro. Un push sur un dépôt privé produit des déploiements à
+l'état `BLOCKED`, sans message d'erreur explicite côté Git.
+
+Deux conséquences à garder en tête :
+
+- **Ce dépôt doit rester public** pour que l'auto-déploiement fonctionne.
+  S'il repasse en privé, il faudra déployer manuellement avec `vercel --prod`.
+- Le compte GitHub qui pousse doit être `Gojobyte` (le dépôt lui appartient).
+  Vérifier avec `gh auth status`, et basculer si besoin :
+  `gh auth switch -u Gojobyte`.
+
+Documentation : [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration)
+
 ## Origine du projet
 
 Ce site a été extrait du monorepo [`chadia-projects`](https://github.com/Gojobyte/chadia-projects)
