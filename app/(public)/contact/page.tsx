@@ -1,3 +1,5 @@
+import { envoyerMessage } from "./actions";
+
 export const metadata = {
   title: "Contact · ONG CHADIA",
   description:
@@ -63,12 +65,16 @@ export default function ContactPage() {
                 Le formulaire ci-dessous est traité par la coordination de l&apos;ONG. Précisez l&apos;objet de votre demande pour qu&apos;elle soit routée au bon interlocuteur (partenariats institutionnels, programmes, communication, sauvegarde).
               </p>
 
-              <form
-                className="contact-form"
-                action="mailto:tidjani@chadia-ong.org"
-                method="post"
-                encType="text/plain"
-              >
+              <form className="contact-form" action={envoyerMessage}>
+                {/* Pot de miel anti-robots : déplacé hors de l'écran plutôt que
+                    masqué en display:none, que certains robots savent repérer.
+                    aria-hidden et tabIndex l'excluent des lecteurs d'écran et
+                    de la navigation au clavier. */}
+                <div className="hp-field" aria-hidden="true">
+                  <label htmlFor="site_web">Ne pas remplir ce champ</label>
+                  <input id="site_web" name="site_web" tabIndex={-1} autoComplete="off" />
+                </div>
+
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                   <div>
                     <label htmlFor="prenom">Prénom</label>

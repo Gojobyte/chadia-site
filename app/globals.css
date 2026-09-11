@@ -2906,6 +2906,15 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow-focus);
 }
 .contact-form textarea { min-height: 130px; resize: vertical; }
+/* Pot de miel anti-robots. Sorti du cadre plutôt que masqué : display:none
+   et visibility:hidden sont détectés par les robots les plus courants, qui
+   évitent alors de remplir le champ — et passent le filtre. */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
 .contact-info { padding: 0; }
 .contact-info dl {
   margin: 0;
