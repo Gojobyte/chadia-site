@@ -107,7 +107,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <label htmlFor="message">Message</label>
-                  <textarea id="message" name="message" required placeholder="Votre demande, en quelques lignes…"></textarea>
+                  {/* minLength reflète la règle appliquée côté serveur : le
+                      navigateur refuse l'envoi et explique pourquoi, plutôt que
+                      de laisser le visiteur découvrir l'échec après coup. */}
+                  <textarea id="message" name="message" required minLength={10} placeholder="Votre demande, en quelques lignes…"></textarea>
                 </div>
                 <button type="submit" className="pbtn pbtn--accent" style={{ justifySelf: "start" }}>
                   Envoyer le message <i className="ph ph-paper-plane-tilt"></i>

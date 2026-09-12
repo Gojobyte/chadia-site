@@ -23,8 +23,10 @@ export default function EchecPage() {
         </div>
         <h1>Votre message <em>n&apos;a pas pu être transmis.</em></h1>
         <p className="lede">
-          Soit un champ du formulaire est resté incomplet, soit notre service d&apos;envoi
-          est momentanément indisponible. <strong>Votre demande nous intéresse</strong> —
+          Vérifiez que votre adresse e-mail est correcte et que votre message fait
+          <strong> au moins dix caractères</strong> — ce sont les deux causes les plus
+          fréquentes. Si tout était complet, c&apos;est notre service d&apos;envoi qui est
+          momentanément indisponible. <strong>Votre demande nous intéresse</strong> :
           voici comment nous joindre sans passer par le formulaire.
         </p>
         <div className="phero-meta">
