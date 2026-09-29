@@ -47,11 +47,14 @@ const OUTILS = [
   },
 ];
 
+/* Les dimensions déclarées correspondent aux fichiers réels : elles fixent le
+   ratio et permettent à next/image de servir la bonne résolution. Toutes en
+   4/3, la mise en page reste homogène. */
 const GALERIE = [
-  { src: "lancement-banderole.webp", cap: "Lancement officiel du Lot 2 — Hadjer-Lamis, 19 mai 2026" },
-  { src: "participants-assemblee.webp", cap: "Autorités traditionnelles, femmes et services techniques réunis" },
-  { src: "session-formation.webp", cap: "Session de travail avec les représentants communautaires" },
-  { src: "seance-projection.webp", cap: "Présentation des axes d'intervention aux participants" },
+  { src: "lancement-banderole.webp", w: 1080, h: 810, cap: "Lancement officiel du Lot 2 — Hadjer-Lamis, 19 mai 2026" },
+  { src: "participants-assemblee.webp", w: 1400, h: 1050, cap: "Autorités traditionnelles, femmes et services techniques réunis" },
+  { src: "session-formation.webp", w: 1080, h: 810, cap: "Session de travail avec les représentants communautaires" },
+  { src: "seance-projection.webp", w: 1400, h: 1050, cap: "Présentation des axes d'intervention aux participants" },
 ];
 
 export default function ConsolidationPaixPage() {
@@ -163,8 +166,8 @@ export default function ConsolidationPaixPage() {
               <Image
                 src="/images/paix-lac-tchad/participants-assemblee.webp"
                 alt="Assemblée de participants : chefs traditionnels, femmes et représentants des services techniques"
-                width={1080}
-                height={810}
+                width={1400}
+                height={1050}
                 sizes="(max-width: 860px) 100vw, 50vw"
                 style={{ aspectRatio: "4 / 3" }}
               />
@@ -230,8 +233,8 @@ export default function ConsolidationPaixPage() {
                 <Image
                   src={`/images/paix-lac-tchad/${g.src}`}
                   alt={g.cap}
-                  width={1080}
-                  height={810}
+                  width={g.w}
+                  height={g.h}
                   sizes="(max-width: 860px) 100vw, 33vw"
                 />
                 <figcaption>{g.cap}</figcaption>
