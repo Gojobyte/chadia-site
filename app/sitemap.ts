@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE, lastModified: miseAJour, changeFrequency: "monthly", priority: 1 },
     { url: `${SITE}/mission`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.8 },
     { url: `${SITE}/precom`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/consolidation-paix`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/resultats`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE}/gouvernance`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE}/contact`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.7 },
