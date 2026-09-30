@@ -48,22 +48,17 @@ const OUTILS = [
   },
 ];
 
-/* Les dimensions déclarées correspondent aux fichiers réels : elles fixent le
-   ratio et permettent à next/image de servir la bonne résolution. Toutes en
-   4/3, la mise en page reste homogène. */
-/* Six vues : la grille .pgallery se compose par cycles de six, ce nombre lui
-   donne une mise en page complète. Les images issues de la captation vidéo
-   sont en 1400×1050 ; le CSS impose de toute façon un ratio 4/3 en galerie. */
-/* Ordre choisi d'après la grille : .pgallery donne une case large aux
-   positions 1 et 5, moyenne aux positions 2 et 4, étroite aux 3 et 6. Les
-   images les plus nettes occupent donc les grandes cases, et le cliché
-   WhatsApp du lancement — le plus compressé — passe en petite case, où sa
-   définition ne se remarque pas. */
+/* Six vues, nombre qui complète un cycle de composition de .pgallery : la
+   grille y élargit les positions 1 et 5 et rétrécit les 3 et 6. Les images
+   les plus définies occupent donc les grandes cases, et le cliché WhatsApp
+   du lancement passe en case étroite, où sa compression ne se voit pas.
+   Les dimensions déclarées sont celles des fichiers, pour que next/image
+   serve la bonne résolution ; le CSS impose de toute façon un ratio 4/3. */
 const GALERIE = [
-  { src: "participants-assemblee.webp", w: 1400, h: 1050, cap: "Autorités traditionnelles, femmes et services techniques réunis" },
+  { src: "participants-assemblee-hd.webp", w: 1400, h: 1050, cap: "Autorités traditionnelles, femmes et services techniques réunis" },
   { src: "prise-parole-notable.webp", w: 1400, h: 1050, cap: "Prise de parole d'un responsable communautaire devant la presse" },
   { src: "lancement-banderole.webp", w: 1080, h: 810, cap: "Lancement officiel du Lot 2 — Hadjer-Lamis, 19 septembre 2026" },
-  { src: "seance-projection.webp", w: 1400, h: 1050, cap: "Présentation des axes d'intervention aux participants" },
+  { src: "seance-projection-hd.webp", w: 1400, h: 1050, cap: "Présentation des axes d'intervention aux participants" },
   { src: "prise-parole-participante.webp", w: 1400, h: 1050, cap: "Une participante s'exprime lors de la cérémonie" },
   { src: "temoignage-participant.webp", w: 1400, h: 1050, cap: "Témoignage recueilli auprès d'un participant" },
 ];
@@ -74,7 +69,7 @@ export default function ConsolidationPaixPage() {
       <section className="hero-full">
         <Image
           className="bg"
-          src="/images/paix-lac-tchad/assemblee-communautaire.webp"
+          src="/images/paix-lac-tchad/assemblee-lancement.webp"
           alt="Habitants des localités concernées réunis lors du lancement du projet dans le Hadjer-Lamis"
           width={2560}
           height={1440}
@@ -191,7 +186,7 @@ export default function ConsolidationPaixPage() {
             </div>
             <figure className="pfigure">
               <Image
-                src="/images/paix-lac-tchad/participants-assemblee.webp"
+                src="/images/paix-lac-tchad/participants-assemblee-hd.webp"
                 alt="Assemblée de participants : chefs traditionnels, femmes et représentants des services techniques"
                 width={1400}
                 height={1050}
