@@ -54,13 +54,18 @@ const OUTILS = [
 /* Six vues : la grille .pgallery se compose par cycles de six, ce nombre lui
    donne une mise en page complète. Les images issues de la captation vidéo
    sont en 1400×1050 ; le CSS impose de toute façon un ratio 4/3 en galerie. */
+/* Ordre choisi d'après la grille : .pgallery donne une case large aux
+   positions 1 et 5, moyenne aux positions 2 et 4, étroite aux 3 et 6. Les
+   images les plus nettes occupent donc les grandes cases, et le cliché
+   WhatsApp du lancement — le plus compressé — passe en petite case, où sa
+   définition ne se remarque pas. */
 const GALERIE = [
-  { src: "lancement-banderole.webp", w: 1080, h: 810, cap: "Lancement officiel du Lot 2 — Hadjer-Lamis, 19 septembre 2026" },
   { src: "participants-assemblee.webp", w: 1400, h: 1050, cap: "Autorités traditionnelles, femmes et services techniques réunis" },
   { src: "prise-parole-notable.webp", w: 1400, h: 1050, cap: "Prise de parole d'un responsable communautaire devant la presse" },
+  { src: "lancement-banderole.webp", w: 1080, h: 810, cap: "Lancement officiel du Lot 2 — Hadjer-Lamis, 19 septembre 2026" },
   { src: "seance-projection.webp", w: 1400, h: 1050, cap: "Présentation des axes d'intervention aux participants" },
-  { src: "temoignage-participant.webp", w: 1400, h: 1050, cap: "Témoignage recueilli auprès d'un participant" },
   { src: "prise-parole-participante.webp", w: 1400, h: 1050, cap: "Une participante s'exprime lors de la cérémonie" },
+  { src: "temoignage-participant.webp", w: 1400, h: 1050, cap: "Témoignage recueilli auprès d'un participant" },
 ];
 
 export default function ConsolidationPaixPage() {
@@ -69,10 +74,10 @@ export default function ConsolidationPaixPage() {
       <section className="hero-full">
         <Image
           className="bg"
-          src="/images/paix-lac-tchad/lancement-officiel-communaute.webp"
-          alt="Participants au lancement officiel du projet réunis derrière la banderole, Hadjer-Lamis"
-          width={1080}
-          height={810}
+          src="/images/paix-lac-tchad/assemblee-communautaire.webp"
+          alt="Assemblée communautaire réunie lors du lancement du projet : chefs traditionnels, femmes et habitants des localités concernées"
+          width={1920}
+          height={1080}
           sizes="100vw"
           priority
         />
