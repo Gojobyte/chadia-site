@@ -216,7 +216,10 @@ export default function ConsolidationPaixPage() {
         </div>
       </section>
 
-      <section className="psection">
+      {/* Bloc sombre au centre de la page : il crée une respiration dans
+          l'alternance clair / beige et détache le volet formation du récit de
+          terrain. Les cartes .chain, restées claires, y gagnent en contraste. */}
+      <section className="psection dark">
         <div className="psection-wrap">
           <div className="section-eyebrow">
             <span className="rule"></span> Renforcement des capacités · Bakara, 24-25 août 2026
@@ -229,17 +232,31 @@ export default function ConsolidationPaixPage() {
             dont la maîtrise conditionne l&apos;accès aux financements futurs.
           </p>
 
-          <div className="timeline" style={{ marginTop: 40 }}>
+          <div className="feature-facts" style={{ marginTop: 32 }}>
+            <span>Lieu <strong>Bakara</strong></span>
+            <span>Dates <strong>24 et 25 août 2026</strong></span>
+            <span>Format <strong>deux jours d&apos;atelier</strong></span>
+            <span>Public <strong>OSC partenaires du projet</strong></span>
+          </div>
+
+          {/* .chain plutôt qu'une liste : les flèches entre les cartes rendent
+              visible l'enchaînement planifier → documenter → rendre compte, qui
+              est précisément le propos de la formation. Trois colonnes au lieu
+              des quatre du thème. */}
+          <div className="chain chain--3" style={{ marginTop: 44 }}>
+            {/* Sans le modificateur .hot : il applique un fond vert forêt, prévu
+                pour détacher une carte sur section claire. Ici la section est
+                déjà vert forêt, la carte s'y fondrait au lieu de ressortir. */}
             {OUTILS.map((o) => (
               <div key={o.num} className="node">
-                <div className="yr">{o.num} · {o.role}</div>
-                <h3>{o.titre}</h3>
+                <div className="role">{o.num} · {o.role}</div>
+                <div className="who">{o.titre}</div>
                 <p>{o.desc}</p>
               </div>
             ))}
           </div>
 
-          <p className="lede" style={{ fontSize: 15, marginTop: 36 }}>
+          <p className="lede" style={{ fontSize: 15, marginTop: 40 }}>
             Ces trois documents forment un cycle : <strong>le TdR planifie, la liste de présence
             documente, le rapport rend compte.</strong> Employés systématiquement, ils
             construisent la redevabilité d&apos;une organisation — et avec elle, sa crédibilité
