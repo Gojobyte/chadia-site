@@ -75,9 +75,9 @@ export default function ConsolidationPaixPage() {
         <Image
           className="bg"
           src="/images/paix-lac-tchad/assemblee-communautaire.webp"
-          alt="Assemblée communautaire réunie lors du lancement du projet : chefs traditionnels, femmes et habitants des localités concernées"
-          width={1920}
-          height={1080}
+          alt="Habitants des localités concernées réunis lors du lancement du projet dans le Hadjer-Lamis"
+          width={2560}
+          height={1440}
           sizes="100vw"
           priority
         />
