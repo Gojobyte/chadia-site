@@ -7,9 +7,10 @@ export const metadata = {
     "Promotion des initiatives de consolidation de la paix menées par les OSC dans la région du bassin du lac Tchad — Lot 2 : Hadjer-Lamis. Projet financé par le Fonds de consolidation de la paix des Nations unies (PBF), mis en œuvre par le PNUD, exécuté par l'ONG CHADIA.",
 };
 
+/* Orthographes relevées sur la banderole officielle du lancement. */
 const LOCALITES = [
-  { num: "01", nm: "Haraz Albiar", em: true, sub: "Mitterine, Guité et Mahada", v: "Zone 1" },
-  { num: "02", nm: "Dagana", sub: "Boitram", v: "Zone 2" },
+  { num: "01", nm: "Haraz Albiar", em: true, sub: "Mittériné, Guité et Mahada", v: "Zone 1" },
+  { num: "02", nm: "Dagana", sub: "Baltram", v: "Zone 2" },
 ];
 
 const AXES = [
@@ -50,11 +51,16 @@ const OUTILS = [
 /* Les dimensions déclarées correspondent aux fichiers réels : elles fixent le
    ratio et permettent à next/image de servir la bonne résolution. Toutes en
    4/3, la mise en page reste homogène. */
+/* Six vues : la grille .pgallery se compose par cycles de six, ce nombre lui
+   donne une mise en page complète. Les images issues de la captation vidéo
+   sont en 1400×1050 ; le CSS impose de toute façon un ratio 4/3 en galerie. */
 const GALERIE = [
-  { src: "lancement-banderole.webp", w: 1080, h: 810, cap: "Lancement officiel du Lot 2 — Hadjer-Lamis, 19 mai 2026" },
+  { src: "lancement-banderole.webp", w: 1080, h: 810, cap: "Lancement officiel du Lot 2 — Hadjer-Lamis, 19 septembre 2026" },
   { src: "participants-assemblee.webp", w: 1400, h: 1050, cap: "Autorités traditionnelles, femmes et services techniques réunis" },
-  { src: "session-formation.webp", w: 1080, h: 810, cap: "Session de travail avec les représentants communautaires" },
+  { src: "prise-parole-notable.webp", w: 1400, h: 1050, cap: "Prise de parole d'un responsable communautaire devant la presse" },
   { src: "seance-projection.webp", w: 1400, h: 1050, cap: "Présentation des axes d'intervention aux participants" },
+  { src: "temoignage-participant.webp", w: 1400, h: 1050, cap: "Témoignage recueilli auprès d'un participant" },
+  { src: "prise-parole-participante.webp", w: 1400, h: 1050, cap: "Une participante s'exprime lors de la cérémonie" },
 ];
 
 export default function ConsolidationPaixPage() {
@@ -82,7 +88,7 @@ export default function ConsolidationPaixPage() {
           </p>
           <div className="hf-actions">
             <span className="badge-live" style={{ color: "var(--pub-yellow)" }}>
-              <span className="dot"></span> En exécution — lancé le 19 mai 2026
+              <span className="dot"></span> En exécution — lancé le 19 septembre 2026
             </span>
           </div>
           <div className="hf-meta">
@@ -92,7 +98,7 @@ export default function ConsolidationPaixPage() {
             <span>Zone <strong>Hadjer-Lamis · bassin du lac Tchad</strong></span>
           </div>
         </div>
-        <span className="credit">Lancement officiel — Hadjer-Lamis, mai 2026</span>
+        <span className="credit">Lancement officiel — Hadjer-Lamis, septembre 2026</span>
       </section>
 
       <section className="counters">
@@ -105,7 +111,7 @@ export default function ConsolidationPaixPage() {
           <div className="counter">
             <div className="l">Localités couvertes</div>
             <div className="v">4</div>
-            <div className="d">Mitterine, Guité, Mahada et Boitram.</div>
+            <div className="d">Mittériné, Guité, Mahada et Baltram.</div>
           </div>
           <div className="counter">
             <div className="l">Axes d&apos;intervention</div>
@@ -114,7 +120,7 @@ export default function ConsolidationPaixPage() {
           </div>
           <div className="counter">
             <div className="l">Lancement officiel</div>
-            <div className="v">19 <em>mai</em></div>
+            <div className="v">19 <em>sept.</em></div>
             <div className="d">Cérémonie tenue en 2026 devant les autorités et les communautés.</div>
           </div>
         </div>
@@ -140,6 +146,22 @@ export default function ConsolidationPaixPage() {
             La devise du projet le résume :
             <em> « Valoriser, responsabiliser, faire sortir le génie de l&apos;Homme »</em>.
           </p>
+
+          {/* Hors .pgallery : la grille y impose un ratio 4/3 qui amputerait le
+              texte de la banderole. Conservée en 16/9, elle reste lisible. */}
+          <figure className="pfigure wide" style={{ marginTop: 40 }}>
+            <Image
+              src="/images/paix-lac-tchad/banderole-officielle.webp"
+              alt="Banderole officielle du projet : Lot 2 Hadjer-Lamis, financé par le PBF, mis en œuvre par le PNUD, exécuté par l'ONG CHADIA, avec les logos de la République du Tchad, du PNUD, de la Commission du Bassin du Lac Tchad, du Peacebuilding Fund et de CHADIA"
+              width={1600}
+              height={900}
+              sizes="(max-width: 860px) 100vw, 100vw"
+            />
+            <figcaption>
+              La banderole du lancement : République du Tchad, PNUD, Commission du Bassin
+              du Lac Tchad, Peacebuilding Fund et ONG CHADIA
+            </figcaption>
+          </figure>
         </div>
       </section>
 
