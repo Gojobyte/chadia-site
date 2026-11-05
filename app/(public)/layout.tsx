@@ -97,24 +97,30 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
             </p>
           </div>
           <div>
-            <h5>Transparence</h5>
+            <h5>Nos projets</h5>
             <Link href="/precom">Projet PRECOM (en cours)</Link>
+            <Link href="/consolidation-paix">Consolidation de la paix (en cours)</Link>
             <Link href="/resultats">Résultats des projets</Link>
             <Link href="/gouvernance">Gouvernance & éthique</Link>
             <Link href="/contact">Mécanisme de plainte</Link>
           </div>
           <div>
             <h5>Suivez-nous</h5>
+            <a href="https://www.youtube.com/@Chadiaong" rel="noreferrer noopener" target="_blank">
+              Chaîne YouTube
+            </a>
             <Link href="/contact">Newsletter mensuelle</Link>
-            <a href="https://www.linkedin.com" rel="noreferrer noopener" target="_blank">LinkedIn</a>
-            <a href="https://www.x.com" rel="noreferrer noopener" target="_blank">X (Twitter)</a>
             <Link href="/contact">Presse · contact</Link>
+            <a href="mailto:tidjani@chadia-ong.org">tidjani@chadia-ong.org</a>
           </div>
         </div>
         <div className="ft-word" aria-hidden="true">CHADIA</div>
         <div className="legal">
           <span>© 2014–{new Date().getFullYear()} CHADIA · Tous droits réservés</span>
-          <span>Propulsé par <strong>CHADIA Projects</strong> · v3.0</span>
+          {/* Remplace « Propulsé par CHADIA Projects · v3.0 », nom et numéro de
+              version de l'application interne dont ce site a été extrait : sans
+              signification pour un visiteur, et source de confusion pour un bailleur. */}
+          <span>Agrément <strong>N° 154/PCMT/PMT/MEPDCI/SE/SPONGAH/2021</strong></span>
         </div>
       </footer>
     </div>
