@@ -41,13 +41,16 @@ const DOMAINS = [
   },
 ];
 
+/* Logos officiels (Wikimedia Commons) aux dimensions réelles des fichiers.
+   Le ministère est représenté par les armoiries de la République — il n'a pas
+   de logo propre ; Solar Power Enterprise n'a pas de logo public et reste un
+   wordmark typographié dans la même grille. */
 const PARTNERS = [
-  "Banque mondiale",
-  "PNUD",
-  "AUDA-NEPAD · Union Africaine",
-  "Programme Alimentaire Mondial",
-  "Ministère de la Santé Publique",
-  "Solar Power Enterprise",
+  { src: "banque-mondiale", alt: "Banque mondiale", w: 506, h: 112, label: "Banque mondiale" },
+  { src: "pnud", alt: "Programme des Nations unies pour le développement", w: 55, h: 112, label: "PNUD" },
+  { src: "auda-nepad", alt: "AUDA-NEPAD — agence de développement de l'Union africaine", w: 367, h: 112, label: "AUDA-NEPAD · Union africaine" },
+  { src: "pam", alt: "Programme alimentaire mondial", w: 110, h: 112, label: "Programme alimentaire mondial" },
+  { src: "ministere-sante", alt: "République du Tchad", w: 141, h: 112, label: "Ministère de la Santé publique" },
 ];
 
 export function HomeContent() {
@@ -338,13 +341,23 @@ export function HomeContent() {
           <div className="section-eyebrow">
             <span className="rule"></span> Ils nous font confiance
           </div>
-          <div className="partners-strip">
-            {PARTNERS.map((p, i) => (
-              <span key={p}>
-                {i > 0 && <span className="sep">·&nbsp;&nbsp;</span>}
-                <em>{p}</em>
-              </span>
+          <div className="partners-logos">
+            {PARTNERS.map((p) => (
+              <figure key={p.src}>
+                <Image
+                  src={`/images/partners/${p.src}.png`}
+                  alt={p.alt}
+                  width={p.w}
+                  height={p.h}
+                />
+                <figcaption>{p.label}</figcaption>
+              </figure>
             ))}
+            {/* Pas de logo public : wordmark dans la même grille. */}
+            <figure>
+              <span className="wordmark">SPE</span>
+              <figcaption>Solar Power Enterprise</figcaption>
+            </figure>
           </div>
           <p style={{ margin: "24px 0 0", fontSize: 14, color: "var(--color-shale)", maxWidth: "62ch", lineHeight: 1.55 }}>
             Chaque mission est sanctionnée par une attestation de bonne exécution du
