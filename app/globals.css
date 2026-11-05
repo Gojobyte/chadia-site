@@ -4239,6 +4239,35 @@ a { color: inherit; text-decoration: none; }
 }
 .chain .node p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--color-sepia); }
 
+/* Lecteur vidéo en façade — l'iframe YouTube n'apparaît qu'au clic */
+.video-cadre {
+  position: relative; display: block;
+  width: 100%; aspect-ratio: 16 / 9;
+  margin: 0; padding: 0;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  overflow: hidden; background: var(--color-ink);
+}
+.video-cadre iframe { display: block; width: 100%; height: 100%; border: 0; }
+.video-cadre img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-facade { cursor: pointer; }
+/* Voile léger : détache le bouton de lecture d'une image claire. */
+.video-facade::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8, 22, 15, 0.45), rgba(8, 22, 15, 0.08));
+}
+.video-play {
+  position: absolute; inset: 0; margin: auto; z-index: 1;
+  width: 84px; height: 84px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(250, 247, 241, 0.94);
+  color: var(--pub-forest); font-size: 34px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.video-facade:hover .video-play { transform: scale(1.07); background: #fff; }
+.video-facade:focus-visible { outline: 2px solid var(--color-terracotta); outline-offset: 3px; }
+@media (max-width: 680px) { .video-play { width: 62px; height: 62px; font-size: 26px; } }
+
 /* Domaines d'action — colonnes filetées */
 .domains-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 32px; }
 .domain { border-top: 2px solid var(--color-ink); padding-top: 16px; }

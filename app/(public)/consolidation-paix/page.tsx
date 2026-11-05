@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LecteurVideo } from "@/components/public/LecteurVideo";
 
 export const metadata = {
   title: "Consolidation de la paix · Hadjer-Lamis · ONG CHADIA",
@@ -256,6 +257,35 @@ export default function ConsolidationPaixPage() {
             documente, le rapport rend compte.</strong> Employés systématiquement, ils
             construisent la redevabilité d&apos;une organisation — et avec elle, sa crédibilité
             auprès des bailleurs.
+          </p>
+        </div>
+      </section>
+
+      <section className="psection">
+        <div className="psection-wrap">
+          <div className="section-eyebrow">
+            <span className="rule"></span> Reportage vidéo
+          </div>
+          <h2>Le lancement, <em>filmé sur place.</em></h2>
+          <p className="lede" style={{ marginBottom: 36 }}>
+            Télé Tchad a couvert la cérémonie de lancement. Autorités traditionnelles,
+            représentants des services techniques et habitants des localités concernées y
+            expliquent ce qu&apos;ils attendent du projet.
+          </p>
+
+          <LecteurVideo
+            id="vafyHnC0Pow"
+            titre="MASSAKORY — ONG CHADIA : lancement du Lot 2, Hadjer-Lamis"
+            vignette="/images/paix-lac-tchad/video-vignette.webp"
+            largeur={1600}
+            hauteur={900}
+          />
+
+          <p className="lede" style={{ fontSize: 14, marginTop: 20 }}>
+            Vidéo publiée sur la chaîne{" "}
+            <a href="https://www.youtube.com/@Chadiaong" target="_blank" rel="noopener noreferrer">
+              YouTube de l&apos;ONG CHADIA
+            </a>.
           </p>
         </div>
       </section>
