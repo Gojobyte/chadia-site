@@ -4,6 +4,10 @@ export const metadata = {
   title: "Contact · ONG CHADIA",
   description:
     "ONG CHADIA — Quartier Kabalaye, BP 6118 N'Djamena. Téléphone +235 65 62 62 40 · tidjani@chadia-ong.org.",
+  alternates: {
+    canonical: "/contact",
+    languages: { fr: "/contact", en: "/en/contact", ar: "/ar/contact" },
+  },
 };
 
 const CHANNELS = [

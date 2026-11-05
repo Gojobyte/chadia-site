@@ -1,9 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Fraunces, Archivo, IBM_Plex_Mono } from "next/font/google";
-import { PublicNav } from "./public-nav";
-import { PublicFx } from "@/components/public/PublicFx";
-import "../public-theme.css";
+import { PublicShell } from "@/components/public/PublicShell";
 
 // Fonts de la direction « Prestige » — chargées uniquement pour le site
 // public ; l'application privée reste sur les fonts Sahel du layout racine.
@@ -33,101 +29,8 @@ const mono = IBM_Plex_Mono({
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`pub ${display.variable} ${sans.variable} ${mono.variable}`}>
-      <PublicFx />
-      <div className="gov-banner">
-        <div className="wrap">
-          <span>
-            République du Tchad · CHADIA pour le Développement du Tchad (CDT) —
-            enregistrée sous N° <strong>154/PCMT/PMT/MEPDCI/SE/SPONGAH/2021</strong> du 08/12/2021
-          </span>
-          <div className="right">
-            <Link href="/contact"><i className="ph ph-question"></i> Aide</Link>
-            <Link href="/contact"><i className="ph ph-shield-check"></i> Signaler une irrégularité</Link>
-          </div>
-        </div>
-      </div>
-
-      <header className="site">
-        <div className="site-wrap">
-          <Link href="/" className="site-brand">
-            <Image
-              className="mark-img"
-              src="/images/brand/logo-mark.webp"
-              alt="Logo CHADIA — carte du Tchad avec le monogramme CDT"
-              width={41}
-              height={44}
-              priority
-            />
-            <span className="nm">
-              CHADIA
-              <em>ONG nationale — Tchad</em>
-            </span>
-          </Link>
-          <PublicNav />
-          {/* Un seul libellé tant que le site n'existe qu'en français : les
-              liens EN / عر pointaient sur « # » et ne faisaient rien — un
-              bouton mort abîme plus la confiance qu'un bouton absent. Ils
-              reviendront avec les traductions. */}
-          <div className="lang">
-            <span className="on">FR</span>
-          </div>
-        </div>
-      </header>
-
-      <main>{children}</main>
-
-      <footer className="siteft">
-        <div className="siteft-wrap">
-          <div>
-            {/* logo-mark plutôt que logo-full : le fichier logo-full est rogné
-                sur son bord droit (le « A » de CHADIA et la fin de
-                « DÉVELOPPEMENT » sont coupés). Le sigle carré est intact. */}
-            <Image
-              className="ft-logo"
-              src="/images/brand/logo-mark.webp"
-              alt="CHADIA pour le Développement du Tchad"
-              width={59}
-              height={64}
-            />
-            <div className="org">CHADIA <em>pour le Tchad</em></div>
-            <p className="desc">
-              CHADIA pour le Développement du Tchad (CDT) — ONG de droit tchadien à but non lucratif,
-              enregistrée le 08/12/2021 auprès du Ministère de l&apos;Économie, de la Planification du Développement
-              et de la Coopération Internationale (Direction des ONG).
-            </p>
-            <p className="desc" style={{ fontFamily: "var(--font-mono)", fontSize: 11 }}>
-              Quartier Kabalaye · en face stade Idriss Mahamat Ouya · Avenue Bezo — N&apos;Djamena, Tchad<br />
-              Tél. : +235 65 62 62 40 / +235 92 29 94 36 · tidjani@chadia-ong.org
-            </p>
-          </div>
-          <div>
-            <h5>Nos projets</h5>
-            <Link href="/precom">Projet PRECOM (en cours)</Link>
-            <Link href="/consolidation-paix">Consolidation de la paix (en cours)</Link>
-            <Link href="/resultats">Résultats des projets</Link>
-            <Link href="/gouvernance">Gouvernance & éthique</Link>
-            <Link href="/contact">Mécanisme de plainte</Link>
-          </div>
-          <div>
-            <h5>Suivez-nous</h5>
-            <a href="https://www.youtube.com/@Chadiaong" rel="noreferrer noopener" target="_blank">
-              Chaîne YouTube
-            </a>
-            <Link href="/contact">Newsletter mensuelle</Link>
-            <Link href="/contact">Presse · contact</Link>
-            <a href="mailto:tidjani@chadia-ong.org">tidjani@chadia-ong.org</a>
-          </div>
-        </div>
-        <div className="ft-word" aria-hidden="true">CHADIA</div>
-        <div className="legal">
-          <span>© 2014–{new Date().getFullYear()} CHADIA · Tous droits réservés</span>
-          {/* Remplace « Propulsé par CHADIA Projects · v3.0 », nom et numéro de
-              version de l'application interne dont ce site a été extrait : sans
-              signification pour un visiteur, et source de confusion pour un bailleur. */}
-          <span>Agrément <strong>N° 154/PCMT/PMT/MEPDCI/SE/SPONGAH/2021</strong></span>
-        </div>
-      </footer>
-    </div>
+    <PublicShell lang="fr" fontClasses={`${display.variable} ${sans.variable} ${mono.variable}`}>
+      {children}
+    </PublicShell>
   );
 }

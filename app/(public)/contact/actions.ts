@@ -38,12 +38,18 @@ function echapper(valeur: string): string {
 }
 
 export async function envoyerMessage(formData: FormData) {
+  // Les versions EN et AR du formulaire posent un champ caché « locale » :
+  // la redirection reste dans la langue du visiteur. Liste blanche stricte —
+  // la valeur vient du client, elle ne doit jamais fabriquer une URL libre.
+  const locale = String(formData.get("locale") ?? "");
+  const prefixe = locale === "en" || locale === "ar" ? `/${locale}` : "";
+
   // Pot de miel : un champ invisible à l'écran, que seuls les robots
   // remplissent. On les renvoie vers la page de confirmation sans rien
   // envoyer — un bot à qui l'on signale son échec ajuste sa tentative
   // suivante, autant le laisser croire qu'il a réussi.
   if (champ(formData, "site_web", MAX_COURT)) {
-    redirect("/contact/merci");
+    redirect(`${prefixe}/contact/merci`);
   }
 
   const prenom = champ(formData, "prenom", MAX_COURT);
@@ -56,13 +62,13 @@ export async function envoyerMessage(formData: FormData) {
   // Le navigateur valide déjà ces champs via `required`. Cette vérification
   // est le filet : un robot qui poste directement sur l'action ignore le HTML.
   if (!prenom || !nom || !EMAIL_VALIDE.test(email) || message.length < 10) {
-    redirect("/contact/echec");
+    redirect(`${prefixe}/contact/echec`);
   }
 
   const cleApi = process.env.RESEND_API_KEY;
   if (!cleApi) {
     console.error("[contact] RESEND_API_KEY absente — message non transmis", { email, objet });
-    redirect("/contact/echec");
+    redirect(`${prefixe}/contact/echec`);
   }
 
   const lignes = [
@@ -118,5 +124,5 @@ export async function envoyerMessage(formData: FormData) {
   // `redirect` lève une exception interne à Next.js pour interrompre le rendu :
   // il doit rester hors du try/catch, sinon le catch l'avalerait et la
   // redirection n'aurait jamais lieu.
-  redirect(transmis ? "/contact/merci" : "/contact/echec");
+  redirect(transmis ? `${prefixe}/contact/merci` : `${prefixe}/contact/echec`);
 }

@@ -4,16 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const NAV = [
-  { href: "/mission", label: "Notre mission" },
-  { href: "/precom", label: "Projet PRECOM" },
-  { href: "/consolidation-paix", label: "Consolidation de la paix" },
-  { href: "/resultats", label: "Résultats" },
-  { href: "/gouvernance", label: "Gouvernance" },
-  { href: "/contact", label: "Contact" },
-];
+export type NavItem = { href: string; label: string };
 
-export function PublicNav() {
+/**
+ * Navigation principale, paramétrée par la liste d'entrées : la même mécanique
+ * (menu mobile, entrée active) sert les trois versions linguistiques du site.
+ */
+export function PublicNav({ items }: { items: readonly NavItem[] }) {
   const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
 
@@ -43,7 +40,7 @@ export function PublicNav() {
       </button>
 
       <nav className={`main-nav ${open ? "is-open" : ""}`}>
-        {NAV.map((item) => {
+        {items.map((item) => {
           const active = pathname.startsWith(item.href);
           return (
             <Link
