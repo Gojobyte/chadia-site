@@ -153,6 +153,49 @@ export function HomeContent() {
         </div>
       </section>
 
+      {/* Second projet en cours, bâti sur la même grille que PRECOM pour que
+          les deux se lisent de la même façon. En section claire : deux blocs
+          sombres d'affilée écraseraient la page. */}
+      <section className="psection alt">
+        <div className="psection-wrap">
+          <div className="feature-grid">
+            <div>
+              <div className="badge-live" style={{ marginBottom: 18 }}>
+                <span className="dot"></span> Projet en cours d&apos;exécution
+              </div>
+              <h2>Hadjer-Lamis. La paix se construit, <em>par les communautés.</em></h2>
+              <p className="lede">
+                Lot 2 du projet « Promotion des initiatives de consolidation de la paix menées
+                par les OSC dans la région du bassin du lac Tchad », financé par le{" "}
+                <strong>Fonds de consolidation de la paix</strong> des Nations unies, mis en
+                œuvre par le <strong>PNUD</strong> et exécuté par CHADIA : développement
+                communautaire et protection de l&apos;environnement à Haraz Albiar et Dagana.
+              </p>
+              <div className="feature-facts">
+                <span>Lancement <strong>19 septembre 2026</strong></span>
+                <span>Localités <strong>Mittériné · Guité · Mahada · Baltram</strong></span>
+                <span>Axes <strong>communautaire &amp; environnement</strong></span>
+              </div>
+              <div style={{ marginTop: 28 }}>
+                <Link href="/consolidation-paix" className="pbtn pbtn--accent">
+                  Voir le projet en détail <i className="ph ph-arrow-up-right"></i>
+                </Link>
+              </div>
+            </div>
+            <div className="feature-photos">
+              <figure className="pfigure tall">
+                <Image src="/images/paix-lac-tchad/participants-assemblee-hd.webp" alt="Assemblée communautaire lors du lancement du projet dans le Hadjer-Lamis" width={1400} height={1050} sizes="(max-width: 900px) 50vw, 25vw" />
+                <figcaption>Lancement — Hadjer-Lamis</figcaption>
+              </figure>
+              <figure className="pfigure tall">
+                <Image src="/images/paix-lac-tchad/prise-parole-participante.webp" alt="Une participante prend la parole lors de la cérémonie de lancement" width={1400} height={1050} sizes="(max-width: 900px) 50vw, 25vw" />
+                <figcaption>Parole aux communautés</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="psection">
         <div className="psection-wrap">
           <div className="section-eyebrow">
