@@ -165,16 +165,17 @@ export function HomeContent() {
               </div>
               <h2>Hadjer-Lamis. La paix se construit, <em>par les communautés.</em></h2>
               <p className="lede">
-                Lot 2 du projet « Promotion des initiatives de consolidation de la paix menées
-                par les OSC dans la région du bassin du lac Tchad », financé par le{" "}
-                <strong>Fonds de consolidation de la paix</strong> des Nations unies, mis en
-                œuvre par le <strong>PNUD</strong> et exécuté par CHADIA : développement
-                communautaire et protection de l&apos;environnement à Haraz Albiar et Dagana.
+                LOT 2 de la promotion des initiatives de consolidation de la paix menées par les
+                OSC dans le bassin du lac Tchad : financé par le <strong>Fonds de consolidation
+                de la paix</strong> des Nations unies, mis en œuvre par le <strong>PNUD</strong>,
+                coordonné par la <strong>Commission du Bassin du Lac Tchad</strong> et exécuté
+                par CHADIA — 44 organisations accompagnées, 88 délégués formés et 2 000 plants
+                mis à disposition dans quatre localités.
               </p>
               <div className="feature-facts">
-                <span>Lancement <strong>19 septembre 2026</strong></span>
-                <span>Localités <strong>Mittériné · Guité · Mahada · Baltram</strong></span>
-                <span>Axes <strong>communautaire &amp; environnement</strong></span>
+                <span>Période <strong>2 sept. → 1ᵉʳ déc. 2026</strong></span>
+                <span>Localités <strong>Guité · Mittériné · Mahada · Baltram</strong></span>
+                <span>Avancement <strong>80 % au 18 oct. 2026</strong></span>
               </div>
               <div style={{ marginTop: 28 }}>
                 <Link href="/consolidation-paix" className="pbtn pbtn--accent">
