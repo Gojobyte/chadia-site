@@ -213,7 +213,7 @@
   border-bottom: 2px solid var(--pub-green);
   padding-bottom: 3px;
 }
-.pub .lang a.on { background: var(--pub-forest); color: var(--color-page); border-radius: 999px; }
+.pub .lang a.on, .pub .lang span.on { background: var(--pub-forest); color: var(--color-page); border-radius: 999px; padding: 4px 10px; }
 .pub .nav-toggle { border-radius: 10px; border: 1px solid var(--color-line-strong); }
 
 /* ============================================================
@@ -805,6 +805,42 @@
       animation-range: entry 0% entry 42%;
     }
   }
+}
+
+/* ============================================================
+   FINITIONS — micro-interactions et matière
+   ============================================================ */
+
+/* Les photos répondent au survol : léger zoom contenu dans le cadre.
+   Le wrapper doit rogner, sinon l'image déborde de son passe-partout. */
+.pub .pfigure { overflow: hidden; }
+.pub .pfigure img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pub .pfigure:hover img { transform: scale(1.03); }
+
+/* Les flèches des boutons avancent d'un cran au survol : le bouton
+   « répond » avant même le clic. */
+.pub .pbtn i { transition: transform 0.25s ease; }
+.pub .pbtn:hover i { transform: translateX(3px); }
+
+/* Grain de papier sur les sections sombres : la matière de l'identité
+   « papier » prolongée dans l'encre. Turbulence SVG en data-URI, opacité
+   très faible — aucune requête réseau, coût de rendu négligeable. */
+.pub .psection.dark,
+.pub .cta {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Les compteurs s'affirment au survol : le chiffre prend la couleur
+   d'accent, le regard est guidé. */
+.pub .counter { transition: border-color 0.3s ease; }
+.pub .counter:hover .v { color: var(--pub-green); }
+.pub .counter .v { transition: color 0.3s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pub .pfigure img, .pub .pbtn i, .pub .counter .v { transition: none; }
+  .pub .pfigure:hover img { transform: none; }
 }
 
 /* ============================================================

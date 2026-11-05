@@ -65,10 +65,12 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
             </span>
           </Link>
           <PublicNav />
+          {/* Un seul libellé tant que le site n'existe qu'en français : les
+              liens EN / عر pointaient sur « # » et ne faisaient rien — un
+              bouton mort abîme plus la confiance qu'un bouton absent. Ils
+              reviendront avec les traductions. */}
           <div className="lang">
-            <a href="#" className="on">FR</a>
-            <a href="#">EN</a>
-            <a href="#">عر</a>
+            <span className="on">FR</span>
           </div>
         </div>
       </header>
@@ -78,11 +80,14 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       <footer className="siteft">
         <div className="siteft-wrap">
           <div>
+            {/* logo-mark plutôt que logo-full : le fichier logo-full est rogné
+                sur son bord droit (le « A » de CHADIA et la fin de
+                « DÉVELOPPEMENT » sont coupés). Le sigle carré est intact. */}
             <Image
               className="ft-logo"
-              src="/images/brand/logo-full.webp"
+              src="/images/brand/logo-mark.webp"
               alt="CHADIA pour le Développement du Tchad"
-              width={133}
+              width={59}
               height={64}
             />
             <div className="org">CHADIA <em>pour le Tchad</em></div>

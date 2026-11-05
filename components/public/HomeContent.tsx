@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LecteurVideo } from "@/components/public/LecteurVideo";
 
 const DOMAINS = [
   {
@@ -215,6 +216,60 @@ export function HomeContent() {
         </div>
       </section>
 
+      {/* Parcours institutionnel — chaque jalon est attesté ailleurs sur le
+          site (pages Résultats et projets) : rien ici n'est déclaratif. */}
+      <section className="psection alt">
+        <div className="psection-wrap">
+          <div className="section-eyebrow">
+            <span className="rule"></span> Notre parcours
+          </div>
+          <h2>Six ans, <em>jalon par jalon.</em></h2>
+          <div className="timeline" style={{ marginTop: 44 }}>
+            <div className="tl-row">
+              <div className="yr">2020</div>
+              <h4>Création de l&apos;organisation</h4>
+              <p>
+                CHADIA pour le Développement du Tchad naît à N&apos;Djaména, portée par une équipe
+                entièrement nationale.
+              </p>
+            </div>
+            <div className="tl-row major">
+              <div className="yr">2021 · agrément</div>
+              <h4>Reconnaissance <em>officielle.</em></h4>
+              <p>
+                Enregistrement auprès du Ministère de l&apos;Économie et de la Planification du
+                Développement — agrément n° 154/PCMT/PMT/MEPDCI/SE/SPONGAH/2021.
+              </p>
+            </div>
+            <div className="tl-row">
+              <div className="yr">2022 · AUDA-NEPAD</div>
+              <h4>145 entrepreneurs formés dans trois pays</h4>
+              <p>
+                Séminaires MPME à N&apos;Djamena, Kigali et Abidjan pour l&apos;agence de développement
+                de l&apos;Union africaine.
+              </p>
+            </div>
+            <div className="tl-row">
+              <div className="yr">2024 · formation</div>
+              <h4>88 % de maîtrise mesurée</h4>
+              <p>
+                Formations SPE évaluées par tests avant / après ; 205 M FCFA de produits sur
+                l&apos;exercice, états financiers SYSCOHADA visés par Atrio Consultance.
+              </p>
+            </div>
+            <div className="tl-row major">
+              <div className="yr">2026 · aujourd&apos;hui</div>
+              <h4>Deux projets <em>en exécution simultanée.</em></h4>
+              <p>
+                PRECOM à N&apos;Djaména (Banque mondiale / PNUD) et LOT 2 Hadjer-Lamis (Fonds de
+                consolidation de la paix / PNUD / CBLT) — 44 organisations accompagnées sur le
+                pourtour du lac Tchad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="photo-band">
         <Image
           src="/images/precom/mobilisation-quartier.webp"
@@ -254,7 +309,23 @@ export function HomeContent() {
               <figcaption>Mobilisation — lancement du projet</figcaption>
             </figure>
           </div>
-          <div style={{ marginTop: 36 }}>
+          {/* La vidéo prolonge la promesse de la section : après les photos,
+              le reportage télévisé. Chargée en façade — aucun script YouTube
+              tant que le visiteur ne clique pas. */}
+          <div style={{ marginTop: 44 }}>
+            <LecteurVideo
+              id="vafyHnC0Pow"
+              titre="MASSAKORY — ONG CHADIA : lancement du LOT 2, Hadjer-Lamis"
+              vignette="/images/paix-lac-tchad/video-vignette.webp"
+              largeur={1600}
+              hauteur={900}
+            />
+            <p className="lede" style={{ fontSize: 13, marginTop: 14 }}>
+              Reportage de Télé Tchad au lancement du LOT 2 Hadjer-Lamis — chaîne YouTube de
+              l&apos;ONG.
+            </p>
+          </div>
+          <div style={{ marginTop: 28 }}>
             <Link href="/precom" className="pbtn pbtn--ghost">
               Voir le reportage complet <i className="ph ph-images"></i>
             </Link>
