@@ -107,8 +107,8 @@ export default function EnHomePage() {
                 <span>Women&apos;s participation <strong>≥ 30 %</strong></span>
               </div>
               <div style={{ marginTop: 28 }}>
-                <Link href="/precom" className="pbtn pbtn--inverse">
-                  Full project page (in French) <i className="ph ph-arrow-up-right"></i>
+                <Link href="/en/precom" className="pbtn pbtn--inverse">
+                  Full project page <i className="ph ph-arrow-up-right"></i>
                 </Link>
               </div>
             </div>
@@ -148,8 +148,8 @@ export default function EnHomePage() {
                 <span>Progress <strong>80 % as of 18 Oct 2026</strong></span>
               </div>
               <div style={{ marginTop: 28 }}>
-                <Link href="/consolidation-paix" className="pbtn pbtn--accent">
-                  Full project page (in French) <i className="ph ph-arrow-up-right"></i>
+                <Link href="/en/peacebuilding" className="pbtn pbtn--accent">
+                  Full project page <i className="ph ph-arrow-up-right"></i>
                 </Link>
               </div>
             </div>

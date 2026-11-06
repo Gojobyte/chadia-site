@@ -106,8 +106,8 @@ export default function ArHomePage() {
                 <span>مشاركة النساء <strong>30 % فأكثر</strong></span>
               </div>
               <div style={{ marginTop: 28 }}>
-                <Link href="/precom" className="pbtn pbtn--inverse">
-                  صفحة المشروع الكاملة (بالفرنسية) <i className="ph ph-arrow-up-left"></i>
+                <Link href="/ar/precom" className="pbtn pbtn--inverse">
+                  صفحة المشروع الكاملة <i className="ph ph-arrow-up-left"></i>
                 </Link>
               </div>
             </div>
@@ -146,8 +146,8 @@ export default function ArHomePage() {
                 <span>نسبة الإنجاز <strong>80 % حتى 18 أكتوبر 2026</strong></span>
               </div>
               <div style={{ marginTop: 28 }}>
-                <Link href="/consolidation-paix" className="pbtn pbtn--accent">
-                  صفحة المشروع الكاملة (بالفرنسية) <i className="ph ph-arrow-up-left"></i>
+                <Link href="/ar/peacebuilding" className="pbtn pbtn--accent">
+                  صفحة المشروع الكاملة <i className="ph ph-arrow-up-left"></i>
                 </Link>
               </div>
             </div>

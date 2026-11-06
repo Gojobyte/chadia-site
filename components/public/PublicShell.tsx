@@ -12,9 +12,8 @@ export type Lang = "fr" | "en" | "ar";
  * paramétrée par langue. Une seule structure pour les trois versions : une
  * correction de lien ou de coordonnées se fait ici, une fois.
  *
- * Les pages projet détaillées n'existent qu'en français : les navigations EN
- * et AR ne proposent que les pages réellement traduites, et le contenu signale
- * explicitement « (in French) » / « (بالفرنسية) » quand un lien y mène.
+ * Les trois versions du site couvrent les mêmes pages ; seuls les PDF des
+ * rapports d'activité restent en français, et les pages le signalent.
  */
 const DICT = {
   fr: {
@@ -63,6 +62,10 @@ const DICT = {
     brandSub: "National NGO — Chad",
     nav: [
       { href: "/en/mission", label: "Our mission" },
+      { href: "/en/precom", label: "PRECOM project" },
+      { href: "/en/peacebuilding", label: "Peacebuilding" },
+      { href: "/en/results", label: "Results" },
+      { href: "/en/governance", label: "Governance" },
       { href: "/en/contact", label: "Contact" },
     ],
     ftOrg: <>CHADIA <em>for Chad</em></>,
@@ -73,8 +76,10 @@ const DICT = {
     ),
     colProjets: "Our projects",
     liensProjets: [
-      { href: "/precom", label: "PRECOM project (in French)" },
-      { href: "/consolidation-paix", label: "Peacebuilding — Lot 2 (in French)" },
+      { href: "/en/precom", label: "PRECOM project (under way)" },
+      { href: "/en/peacebuilding", label: "Peacebuilding — Lot 2 (under way)" },
+      { href: "/en/results", label: "Project results" },
+      { href: "/en/governance", label: "Governance & ethics" },
       { href: "/en/contact", label: "Complaint mechanism" },
     ],
     colSuivre: "Follow us",
@@ -94,6 +99,10 @@ const DICT = {
     brandSub: "منظمة وطنية غير حكومية — تشاد",
     nav: [
       { href: "/ar/mission", label: "رسالتنا" },
+      { href: "/ar/precom", label: "مشروع بريكوم" },
+      { href: "/ar/peacebuilding", label: "توطيد السلام" },
+      { href: "/ar/results", label: "النتائج" },
+      { href: "/ar/governance", label: "الحوكمة" },
       { href: "/ar/contact", label: "اتصل بنا" },
     ],
     ftOrg: <>تشاديا <em>من أجل تشاد</em></>,
@@ -104,8 +113,10 @@ const DICT = {
     ),
     colProjets: "مشاريعنا",
     liensProjets: [
-      { href: "/precom", label: "مشروع بريكوم (بالفرنسية)" },
-      { href: "/consolidation-paix", label: "توطيد السلام — الحزمة 2 (بالفرنسية)" },
+      { href: "/ar/precom", label: "مشروع بريكوم (قيد التنفيذ)" },
+      { href: "/ar/peacebuilding", label: "توطيد السلام — الحزمة 2 (قيد التنفيذ)" },
+      { href: "/ar/results", label: "نتائج المشاريع" },
+      { href: "/ar/governance", label: "الحوكمة والأخلاقيات" },
       { href: "/ar/contact", label: "آلية الشكاوى" },
     ],
     colSuivre: "تابعونا",

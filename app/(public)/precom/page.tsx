@@ -5,6 +5,10 @@ export const metadata = {
   title: "Projet PRECOM · ONG CHADIA",
   description:
     "PRECOM — Renforcement de la résilience communautaire du 1er arrondissement de N'Djaména (Farcha, Milézi, Madjorio). Sous-composante 2.2 du projet PILIER, financée par la Banque mondiale, mise en œuvre par le PNUD, exécutée par l'ONG CHADIA.",
+  alternates: {
+    canonical: "/precom",
+    languages: { fr: "/precom", en: "/en/precom", ar: "/ar/precom" },
+  },
 };
 
 const QUARTIERS = [

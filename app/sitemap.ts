@@ -27,8 +27,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/en`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/en/mission`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE}/en/contact`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${SITE}/en/precom`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE}/en/peacebuilding`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE}/en/results`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE}/en/governance`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE}/ar`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/ar/mission`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
     { url: `${SITE}/ar/contact`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${SITE}/ar/precom`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE}/ar/peacebuilding`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE}/ar/results`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE}/ar/governance`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.5 },
   ];
 }
