@@ -8,7 +8,7 @@ export const metadata = {
     "منظمة تشاديا لتنمية تشاد — منظمة وطنية تشادية غير حكومية، مسجّلة تحت رقم 154/PCMT/PMT/MEPDCI/SE/SPONGAH/2021. برامج تنموية، إصحاح حضري وبناء قدرات في نجامينا والأقاليم.",
   alternates: {
     canonical: "/ar",
-    languages: { fr: "/", en: "/en", ar: "/ar" },
+    languages: { "x-default": "/", fr: "/", en: "/en", ar: "/ar" },
   },
 };
 

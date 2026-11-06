@@ -8,7 +8,7 @@ export const metadata = {
     "الحزمة 2 حجر لميس: تعبئة مجتمعية وبيئة في أربع بلدات حول بحيرة تشاد. 44 منظمة مرافَقة، 88 مندوبًا مدرَّبًا، 2000 شتلة. بتمويل من صندوق بناء السلام الأممي عبر برنامج الأمم المتحدة الإنمائي، وتنسيق من لجنة حوض بحيرة تشاد.",
   alternates: {
     canonical: "/ar/peacebuilding",
-    languages: { fr: "/consolidation-paix", en: "/en/peacebuilding", ar: "/ar/peacebuilding" },
+    languages: { "x-default": "/consolidation-paix", fr: "/consolidation-paix", en: "/en/peacebuilding", ar: "/ar/peacebuilding" },
   },
 };
 

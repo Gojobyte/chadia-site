@@ -4,7 +4,7 @@ export const metadata = {
     "Impact of CHADIA NGO programmes · AUDA-NEPAD 2022 (145 entrepreneurs), SPE 2024 (15 entrepreneurs, 88% mastery rate).",
   alternates: {
     canonical: "/en/results",
-    languages: { fr: "/resultats", en: "/en/results", ar: "/ar/results" },
+    languages: { "x-default": "/resultats", fr: "/resultats", en: "/en/results", ar: "/ar/results" },
   },
 };
 

@@ -8,7 +8,7 @@ export const metadata = {
     "LOT 2 Hadjer-Lamis : mobilisation communautaire et environnement dans quatre localités du pourtour du lac Tchad. 44 organisations accompagnées, 88 délégués formés, 2 000 plants. Financement du Fonds de consolidation de la paix des Nations unies via le PNUD, sous coordination de la Commission du Bassin du Lac Tchad.",
   alternates: {
     canonical: "/consolidation-paix",
-    languages: { fr: "/consolidation-paix", en: "/en/peacebuilding", ar: "/ar/peacebuilding" },
+    languages: { "x-default": "/consolidation-paix", fr: "/consolidation-paix", en: "/en/peacebuilding", ar: "/ar/peacebuilding" },
   },
 };
 

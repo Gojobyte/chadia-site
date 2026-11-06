@@ -7,7 +7,7 @@ export const metadata = {
     "بريكوم — تعزيز صمود المجتمعات المحلية في المقاطعة الأولى بنجامينا (فرشا، ميليزي، ماجوريو). المكوّن الفرعي 2.2 من مشروع بيلييه، بتمويل من البنك الدولي وتنفيذ من برنامج الأمم المتحدة الإنمائي وتنفيذ ميداني من منظمة تشاديا.",
   alternates: {
     canonical: "/ar/precom",
-    languages: { fr: "/precom", en: "/en/precom", ar: "/ar/precom" },
+    languages: { "x-default": "/precom", fr: "/precom", en: "/en/precom", ar: "/ar/precom" },
   },
 };
 

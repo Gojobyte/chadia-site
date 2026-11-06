@@ -6,7 +6,7 @@ export const metadata = {
     "Association tchadienne sans but lucratif. Conseil d'administration, bureau exécutif, structure opérationnelle de l'ONG CHADIA pour le développement du Tchad.",
   alternates: {
     canonical: "/gouvernance",
-    languages: { fr: "/gouvernance", en: "/en/governance", ar: "/ar/governance" },
+    languages: { "x-default": "/gouvernance", fr: "/gouvernance", en: "/en/governance", ar: "/ar/governance" },
   },
 };
 

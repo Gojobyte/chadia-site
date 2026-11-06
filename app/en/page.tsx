@@ -8,7 +8,7 @@ export const metadata = {
     "CHADIA for the Development of Chad (CDT) — a national Chadian NGO registered under No. 154/PCMT/PMT/MEPDCI/SE/SPONGAH/2021. Development programmes, urban sanitation and capacity building in N'Djamena and the provinces.",
   alternates: {
     canonical: "/en",
-    languages: { fr: "/", en: "/en", ar: "/ar" },
+    languages: { "x-default": "/", fr: "/", en: "/en", ar: "/ar" },
   },
 };
 

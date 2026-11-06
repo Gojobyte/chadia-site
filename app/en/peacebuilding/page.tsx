@@ -8,7 +8,7 @@ export const metadata = {
     "Lot 2 Hadjer-Lamis: community mobilisation and environment in four localities around Lake Chad. 44 organisations supported, 88 delegates trained, 2,000 seedlings. Financed by the UN Peacebuilding Fund through UNDP, coordinated by the Lake Chad Basin Commission.",
   alternates: {
     canonical: "/en/peacebuilding",
-    languages: { fr: "/consolidation-paix", en: "/en/peacebuilding", ar: "/ar/peacebuilding" },
+    languages: { "x-default": "/consolidation-paix", fr: "/consolidation-paix", en: "/en/peacebuilding", ar: "/ar/peacebuilding" },
   },
 };
 

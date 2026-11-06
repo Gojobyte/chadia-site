@@ -1,6 +1,16 @@
 import { Amiri, IBM_Plex_Sans_Arabic, IBM_Plex_Mono } from "next/font/google";
 import { PublicShell } from "@/components/public/PublicShell";
 
+// Locale OpenGraph des pages arabes (ar_TD : arabe, Tchad).
+export const metadata = {
+  openGraph: {
+    type: "website" as const,
+    locale: "ar_TD",
+    url: "https://ong-chadia.com/ar",
+    siteName: "منظمة تشاديا",
+  },
+};
+
 // La version arabe reçoit ses propres fontes, déclarées sur les MÊMES
 // variables CSS que les fontes latines : tout le thème (titres serif,
 // texte, étiquettes) bascule sans toucher une ligne de CSS.

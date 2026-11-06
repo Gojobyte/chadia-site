@@ -129,6 +129,43 @@ const DICT = {
   },
 } as const;
 
+/* Carte d'identité de l'organisation pour les moteurs de recherche
+   (schema.org NGO). C'est ce qui relie les trois versions linguistiques à une
+   même entité et nourrit l'encart de droite dans les résultats Google. */
+function jsonLdOrganisation(lang: Lang) {
+  const noms: Record<Lang, string> = {
+    fr: "CHADIA pour le Développement du Tchad",
+    en: "CHADIA for the Development of Chad",
+    ar: "منظمة تشاديا لتنمية تشاد",
+  };
+  return {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "@id": "https://ong-chadia.com/#organisation",
+    name: noms[lang],
+    alternateName: ["CHADIA", "CDT", "ONG CHADIA"],
+    url: "https://ong-chadia.com",
+    logo: "https://ong-chadia.com/icon.png",
+    foundingDate: "2020",
+    inLanguage: lang,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Quartier Kabalaye, Avenue Bezo",
+      addressLocality: "N'Djamena",
+      postOfficeBoxNumber: "6118",
+      addressCountry: "TD",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+235 65 62 62 40",
+      email: "tidjani@chadia-ong.org",
+      contactType: "customer service",
+      availableLanguage: ["French", "English", "Arabic"],
+    },
+    sameAs: ["https://www.youtube.com/@Chadiaong"],
+  };
+}
+
 export function PublicShell({
   lang,
   fontClasses,
@@ -143,6 +180,22 @@ export function PublicShell({
 
   return (
     <div className={`pub ${fontClasses}`} lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganisation(lang)) }}
+      />
+      {/* Le layout racine fixe <html lang="fr"> pour tout le site : seul le
+          layout racine rend <html>, et il ne connaît pas la route. Ce script
+          inline aligne l'attribut sur la langue réelle avant le premier rendu —
+          déterminant pour les lecteurs d'écran, qui choisissent leur voix de
+          synthèse d'après lui. Google, lui, lit les hreflang. */}
+      {lang !== "fr" && (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.lang=${JSON.stringify(lang)};${lang === "ar" ? 'document.documentElement.dir="rtl";' : ""}`,
+          }}
+        />
+      )}
       <PublicFx />
       <div className="gov-banner">
         <div className="wrap">

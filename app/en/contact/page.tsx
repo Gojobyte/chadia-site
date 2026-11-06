@@ -6,7 +6,7 @@ export const metadata = {
     "CHADIA NGO — Kabalaye district, BP 6118 N'Djamena. Phone +235 65 62 62 40 · tidjani@chadia-ong.org.",
   alternates: {
     canonical: "/en/contact",
-    languages: { fr: "/contact", en: "/en/contact", ar: "/ar/contact" },
+    languages: { "x-default": "/contact", fr: "/contact", en: "/en/contact", ar: "/ar/contact" },
   },
 };
 

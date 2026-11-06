@@ -6,7 +6,7 @@ export const metadata = {
     "منظمة تشاديا — حي كابالاي، ص.ب 6118 نجامينا. الهاتف ‎+235 65 62 62 40 · tidjani@chadia-ong.org.",
   alternates: {
     canonical: "/ar/contact",
-    languages: { fr: "/contact", en: "/en/contact", ar: "/ar/contact" },
+    languages: { "x-default": "/contact", fr: "/contact", en: "/en/contact", ar: "/ar/contact" },
   },
 };
 

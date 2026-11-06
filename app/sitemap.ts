@@ -2,41 +2,55 @@ import type { MetadataRoute } from "next";
 
 const SITE = "https://ong-chadia.com";
 
+/* Les sept pages du site et leurs trois versions linguistiques. Une seule
+   table : ajouter une page ici suffit à la déclarer dans les trois langues. */
+const PAGES: {
+  fr: string;
+  en: string;
+  ar: string;
+  freq: "monthly" | "yearly";
+  prio: number;
+}[] = [
+  { fr: "/", en: "/en", ar: "/ar", freq: "monthly", prio: 1 },
+  { fr: "/mission", en: "/en/mission", ar: "/ar/mission", freq: "yearly", prio: 0.8 },
+  { fr: "/precom", en: "/en/precom", ar: "/ar/precom", freq: "monthly", prio: 0.8 },
+  { fr: "/consolidation-paix", en: "/en/peacebuilding", ar: "/ar/peacebuilding", freq: "monthly", prio: 0.8 },
+  { fr: "/resultats", en: "/en/results", ar: "/ar/results", freq: "monthly", prio: 0.7 },
+  { fr: "/gouvernance", en: "/en/governance", ar: "/ar/governance", freq: "yearly", prio: 0.6 },
+  { fr: "/contact", en: "/en/contact", ar: "/ar/contact", freq: "yearly", prio: 0.7 },
+];
+
 /**
  * Plan du site remis aux moteurs de recherche (/sitemap.xml).
  *
+ * Chaque URL déclare ses équivalents linguistiques (alternates) : c'est l'un
+ * des trois canaux hreflang reconnus par Google, en plus des balises <link>
+ * déjà posées dans le <head> des pages. Les deux canaux racontent la même
+ * chose — condition pour que Google serve la bonne langue à chaque visiteur.
+ *
  * Les pages /contact/merci et /contact/echec en sont volontairement absentes :
- * elles sont marquées noindex, et une confirmation d'envoi n'a aucune valeur
- * dans un résultat de recherche.
+ * elles sont noindex, une confirmation d'envoi n'a rien à faire dans un
+ * résultat de recherche.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   // Date fixe plutôt que new Date() : annoncer une modification à chaque build
   // alors que le contenu n'a pas bougé apprend aux moteurs à ignorer le champ.
-  const miseAJour = new Date("2026-09-12");
+  const miseAJour = new Date("2026-11-06");
 
-  return [
-    { url: SITE, lastModified: miseAJour, changeFrequency: "monthly", priority: 1 },
-    { url: `${SITE}/mission`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.8 },
-    { url: `${SITE}/precom`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE}/consolidation-paix`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE}/resultats`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/gouvernance`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
-    { url: `${SITE}/contact`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.7 },
-    // Versions anglaise et arabe — accueil, mission et contact existent
-    // dans les trois langues ; les pages projet détaillées restent en français.
-    { url: `${SITE}/en`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE}/en/mission`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
-    { url: `${SITE}/en/contact`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
-    { url: `${SITE}/en/precom`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/en/peacebuilding`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/en/results`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${SITE}/en/governance`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.5 },
-    { url: `${SITE}/ar`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE}/ar/mission`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
-    { url: `${SITE}/ar/contact`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.6 },
-    { url: `${SITE}/ar/precom`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/ar/peacebuilding`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE}/ar/results`, lastModified: miseAJour, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${SITE}/ar/governance`, lastModified: miseAJour, changeFrequency: "yearly", priority: 0.5 },
-  ];
+  return PAGES.flatMap((p) =>
+    ([p.fr, p.en, p.ar] as const).map((chemin) => ({
+      url: `${SITE}${chemin === "/" ? "" : chemin}`,
+      lastModified: miseAJour,
+      changeFrequency: p.freq,
+      priority: p.prio,
+      alternates: {
+        languages: {
+          "x-default": `${SITE}${p.fr === "/" ? "" : p.fr}`,
+          fr: `${SITE}${p.fr === "/" ? "" : p.fr}`,
+          en: `${SITE}${p.en}`,
+          ar: `${SITE}${p.ar}`,
+        },
+      },
+    }))
+  );
 }

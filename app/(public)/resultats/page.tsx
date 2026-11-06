@@ -4,7 +4,7 @@ export const metadata = {
     "Impact des programmes ONG CHADIA · AUDA-NEPAD 2022 (145 entrepreneurs), SPE 2024 (15 entrepreneurs, taux maîtrise 88%).",
   alternates: {
     canonical: "/resultats",
-    languages: { fr: "/resultats", en: "/en/results", ar: "/ar/results" },
+    languages: { "x-default": "/resultats", fr: "/resultats", en: "/en/results", ar: "/ar/results" },
   },
 };
 

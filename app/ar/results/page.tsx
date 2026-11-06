@@ -4,7 +4,7 @@ export const metadata = {
     "أثر برامج منظمة تشاديا · أودا-نيباد 2022 (145 رائد أعمال)، SPE سنة 2024 (15 رائد أعمال، نسبة إتقان 88%).",
   alternates: {
     canonical: "/ar/results",
-    languages: { fr: "/resultats", en: "/en/results", ar: "/ar/results" },
+    languages: { "x-default": "/resultats", fr: "/resultats", en: "/en/results", ar: "/ar/results" },
   },
 };
 

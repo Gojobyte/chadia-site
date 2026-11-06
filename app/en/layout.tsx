@@ -1,6 +1,18 @@
 import { Fraunces, Archivo, IBM_Plex_Mono } from "next/font/google";
 import { PublicShell } from "@/components/public/PublicShell";
 
+// Remplace la locale OpenGraph héritée (fr_FR) : les aperçus de partage des
+// pages anglaises s'annoncent en anglais. Le merge Next étant superficiel,
+// le bloc openGraph se redéclare en entier.
+export const metadata = {
+  openGraph: {
+    type: "website" as const,
+    locale: "en_GB",
+    url: "https://ong-chadia.com/en",
+    siteName: "CHADIA NGO",
+  },
+};
+
 // Mêmes fonts latines que la version française : l'anglais partage
 // l'identité typographique du site.
 const display = Fraunces({

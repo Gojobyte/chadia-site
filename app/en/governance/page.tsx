@@ -6,7 +6,7 @@ export const metadata = {
     "Chadian non-profit association. Board of directors, executive bureau and operational structure of CHADIA NGO for the development of Chad.",
   alternates: {
     canonical: "/en/governance",
-    languages: { fr: "/gouvernance", en: "/en/governance", ar: "/ar/governance" },
+    languages: { "x-default": "/gouvernance", fr: "/gouvernance", en: "/en/governance", ar: "/ar/governance" },
   },
 };
 

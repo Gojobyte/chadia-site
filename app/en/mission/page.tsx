@@ -7,7 +7,7 @@ export const metadata = {
     "CHADIA — Chadia for the Development of Chad (CDT), an independent, non-political Chadian non-profit: vocational training, entrepreneurship support, water and sanitation, agriculture, education and health.",
   alternates: {
     canonical: "/en/mission",
-    languages: { fr: "/mission", en: "/en/mission", ar: "/ar/mission" },
+    languages: { "x-default": "/mission", fr: "/mission", en: "/en/mission", ar: "/ar/mission" },
   },
 };
 

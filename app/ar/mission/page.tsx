@@ -7,7 +7,7 @@ export const metadata = {
     "تشاديا — منظمة تشادية مستقلة وغير سياسية لا تهدف إلى الربح: التدريب المهني، مرافقة ريادة الأعمال، المياه والإصحاح، الزراعة، التعليم والصحة.",
   alternates: {
     canonical: "/ar/mission",
-    languages: { fr: "/mission", en: "/en/mission", ar: "/ar/mission" },
+    languages: { "x-default": "/mission", fr: "/mission", en: "/en/mission", ar: "/ar/mission" },
   },
 };
 

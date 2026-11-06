@@ -6,7 +6,7 @@ export const metadata = {
     "جمعية تشادية لا تهدف إلى الربح. مجلس الإدارة والمكتب التنفيذي والهيكل التشغيلي لمنظمة تشاديا لتنمية تشاد.",
   alternates: {
     canonical: "/ar/governance",
-    languages: { fr: "/gouvernance", en: "/en/governance", ar: "/ar/governance" },
+    languages: { "x-default": "/gouvernance", fr: "/gouvernance", en: "/en/governance", ar: "/ar/governance" },
   },
 };
 

@@ -7,7 +7,7 @@ export const metadata = {
     "PRECOM — Strengthening community resilience in N'Djamena's 1st district (Farcha, Milézi, Madjorio). Sub-component 2.2 of the PILIER project, financed by the World Bank, implemented by UNDP, executed by CHADIA NGO.",
   alternates: {
     canonical: "/en/precom",
-    languages: { fr: "/precom", en: "/en/precom", ar: "/ar/precom" },
+    languages: { "x-default": "/precom", fr: "/precom", en: "/en/precom", ar: "/ar/precom" },
   },
 };
 
